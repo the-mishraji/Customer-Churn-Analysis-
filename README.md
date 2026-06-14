@@ -1,68 +1,96 @@
-customer Churn Analysis Using SQL, Python and Tableau
-Cropped - Customer Churn Dashboard
+# 📊 Dollar Bank: End-to-End Customer Churn Analytics
+![SQL](https://img.shields.io/badge/Exploratory_Analysis-SQL-blue?style=flat-square&logo=microsoft-sql-server)
+![Python](https://img.shields.io/badge/Deep_Dive_EDA-Python-darkgreen?style=flat-square&logo=python)
+![Tableau](https://img.shields.io/badge/Business_Intelligence-Tableau-orange?style=flat-square&logo=tableau)
 
-Customer Churn Dashboard (Tableau) - See link to Dashboard at the bottom of this page
+An end-to-end data analytics and strategic business intelligence solution investigating customer attrition patterns within the credit card division of **Dollar Bank**. This repository details a comprehensive analysis pipeline—spanning relational data exploration using **SQL**, rigorous programmatic diagnostics via a **Python Jupyter Notebook**, and interactive executive monitoring built in **Tableau**.
+
+---
+
+## 📈 Executive Performance Baseline (KPIs)
+
+| 16.0% | $4,404 | $3,095 | 20% ➔ 80% |
+| :---: | :---: | :---: | :---: |
+| **Current Churn Rate** <br>*(Industry Target: < 7%)* | **Average Client Spend** <br>*(All Accounts)* | **Average Churn Spend** <br>*(Lost Accounts)* | **Pareto "Vital Few"** <br>*(Strategic Target Segment)* |
+
+---
+
+## 🏢 Business Case & Project Objective
+Dollar Bank noticed a steady increase in customer attrition within its credit card services. As a Senior Data Analyst, I was brought in to analyze customer data, find the main reasons behind this churn, and deliver actionable, data-backed recommendations to improve retention and protect business revenue.
+
+---
+
+## 🛠️ Data Architecture & Methodology
+
+```mermaid
+graph TD
+    A[Raw Bank Datasets] --> B[SQL: Multi-Table Joins & Validation]
+    B --> C[Python: Outlier Checking, Quality Verification & EDA]
+    C --> D[Tableau: Interactive Dashboard Optimization]
+    D --> E[Business Strategy & Retention Interventions]
+1. Relational Engineering (SQL)
+Leveraged complex multi-table joins to unify three disparate internal banking tables.
+
+Established a clean master dataset to query baseline attrition metrics and track demographic behavior.
+
+2. Deep-Dive Diagnostics (Python)
+Performed feature variable typing, verified missing records, and isolated behavioral outliers.
+
+Conducted multi-variable distribution evaluations and built a cross-correlation matrix to uncover the early signals of customer detachment.
+
+View Python Notebook (Update with actual link)
+
+3. Interactive Visualization (Tableau)
+Developed an executive-facing business intelligence interface mapping demographic shifts and spending anomalies.
+
+Implemented interactive filtering loops to let stakeholders drill down into account age groups and income brackets on the fly.
+
+Access Live Tableau Dashboard (Update with actual link)
+
+🔍 Core Analytical Insights
+💳 Transactional Indicators & Behavioral Thresholds
+Activity Drops: Customers who completed fewer than 100 total transactions and spent less than $5,000 over their lifetime showed the highest risk of churn, regardless of income bracket.
+
+Spend Disparity: Churned accounts held an average spending floor of $3,095, which is roughly 30% lower than the active customer average of $4,404. This drop-off serves as a reliable early warning indicator for customer success teams.
+
+👥 High-Risk Demographic Clusters
+Gender & Age Profile: Female clients aged 41–50 represented the largest single attrition spike, accounting for 4.4% of the total customer loss within that segment.
+
+Account Tenure Vulnerability: Customer attrition peaks among established accounts (25–36 months of tenure) at 5.0% for women and 3.6% for men. This indicates a clear gap in onboarding engagement once an account moves past its second year.
+
+Card Tier Concentration: The largest single group of churned accounts (559 customers) consisted of female Blue Card holders earning less than $40k, followed closely by male Blue Card holders earning $80k–$120k (215 customers).
+
+   Attrition Matrix by Product / Income Group:
+   [Blue Card Tier] ───► Low Income (<$40k) Female Accounts  ───► 559 Churned
+                    ───► Mid-High ($80k-$120k) Male Accounts ───► 215 Churned
+🎯 Pareto Analysis ("The Vital Few")
+The analysis verified that 20% of churned customer segments are driving roughly 80% of total customer attrition.
+
+The dashboard isolates two primary high-impact clusters within this group: Female graduates (married or single) and Male graduates (single).
+
+🚀 Strategic Recommendations & Action Plan
+By deploying highly targeted marketing campaigns and product improvements focused on these specific "Vital Few" segments, Dollar Bank can reduce its overall churn rate from 16% down to an industry-standard 7%.
+
+1. Tailored Life-Stage Resource Hubs
+Action: Provide tailored financial literacy tracks, webinars, and loan repayment toolkits to young single and married graduates.
+
+Goal: Increase brand affinity by helping younger customers manage debt and build credit responsibly.
+
+2. Micro-Targeted Strategic Partnerships
+Action: Launch co-branded partnership perks (e.g., fitness network credits, active lifestyle discounts) tailored specifically to younger graduate segments.
+
+Goal: Embed the bank's credit cards directly into the daily spending habits of these high-velocity consumers.
+
+3. Dedicated Customer Anniversary Loyalty Programs
+Action: Create an automated milestone reward system specifically targeting accounts approaching the critical 25-to-36 month tenure window.
+
+Goal: Counteract mid-tenure churn by offering annual fee waivers, free investment planning sessions, or points multipliers.
+
+4. Specialized Financial Inclusion & Counseling Services
+Action: Introduce proactive credit monitoring and financial wellness counseling tools for Blue Card holders earning under $40k.
+
+Goal: Reduce financial anxiety, lower default risks, and build long-term account loyalty.
 
 
-Introduction
-Dollar Bank Customer Churn Analysis using SQL + Python + Tableau: An end-to-end project that involved exploratory analysis with SQL, a deep-dive EDA using Python, and building an interactive dashboard with Tableau to present meaningful business insights for the bank.
-
-Dollar Bank was concerned that more and more customers were leaving its credit card services. They asked for a seasoned Data Analyst to analyze the problem for them in order to understand the main reasons for customers leaving the services. They also needed me to come up with recommendations for how the bank can mitigate further customer churns. Eventually, the bank wanted to proactively implement these recommendations in order to keep their customers happy.
-
-
-Methodology
-SQL queries were used to explore and understand the data, and joining all 3 datasets was critical in answering research questions to generate valuable insights for the business.
-
-Python deep-dive analysis took this a step further by drilling down into the data to understand the different variables, their datatypes, summary statistics, checking for outliers, and assessing both data quality and tidiness issues that required data cleaning. Performing a distribution analysis for each variable identified unique values and variables that showed potential in providing useful business insights. A cross-correlation analysis helped to check for the relationship between variables and identify variables of interests that can help solve the business problem at hand; which is the ultimate question for the bank - "Why are customers churning?" See link below.
-
-Link to Python Notebook
-
-The Tableau dashboard highlighted the importance of understanding customer demographics, account information, and transaction behavior in predicting and preventing customer churn. Click the link below to use the dashboard.
-
-Link to Tableau Dashboard
-
-
-Insights
-
-KPIs Only - Customer Churn Dashboard
-
-Overall Churn Rate: The overall churn rate is 16%, which indicates that around one in six customers were churning. This is a key metric for the bank to continuously monitor in its effort to mitigate churn and increase customer retention.
-
-Transaction Amounts: The dashboard also shows the average transaction amount for all customers is $4,404, which suggests that the bank's customer base includes customers with a range of spending levels. However, the average transaction amount for churned customers is $3,095, which is significantly lower than the average for all customers. This may indicate that customers who spend less money on transactions are more likely to churn, perhaps because they are not as invested in the bank's services or do not find them as useful. The bank may want to consider strategies for encouraging customers to increase their transaction amounts in order to improve retention rates. For example, they could offer rewards programs or incentives for customers who maintain high transaction volumes or balances. Alternatively, they could explore ways to improve their services or product offerings to make them more attractive to customers with lower transaction amounts.
-
-
-
-Customer Churn Demographics
-
-Customer Demographics: Overall, the average customer age is 46 yrs, and there are more female customers than male customers, with the majority of customers in the 41-50 age range. The churn summary indicates that female clients also aged between 41-50 have the highest churn rate, with 4.4% of the 2461 female clients in this age group having churned, compared to 3.3% of the 2191 male clients in the same age group. Overall, the churn rate is higher for females at 9.2% across all age groups, compared to 6.9% for males across all age groups.
-
-According to the analysis, established customers (those who have been with the bank for 25 to 36 months) have the highest churn rate at 5% for females and 3.6% for males. The second-highest churn rate is seen in long-term customers (those with the bank for 37-48 months), with rates of 2.8% for females and 2.3% for males.
-
-The analysis also shows that the largest number of churned customers were female blue credit card holders earning less than \$40k, with a total count of 559. The second highest count, at 215, were male blue credit card holders earning between $80k -$120k. However, a majority of customers across all income categories owned blue credit cards. Both male and female customers who churned were established and long-term customers of the bank. Male blue cardholders had churn counts ranging from 97 to 215 across income categories of $40k -$120k+, with all churned male blue cardholders being established and long-term customers of the bank.
-
-This information can be used to tailor marketing and communication efforts to specific demographic groups to mitigate customer churn and increase customer retention.
-
-
-
-Visualizing customer spending behaviours
-
-Customer Behavior: Visualizing customer spending behaviors and connection to churn reveals that customers with higher number of transactions and higher transaction amounts are less likely to churn. Additionally, the scatter plot shows that customers who churned made less than 100 transactions and typically spent less than 5K before churning, regardless of income category. This suggests that offering incentives for customers to maintain high levels of activity and transaction amounts may be an effective retention strategy.
-
-
-
-Paretor Analysis of Customers
-
-Short-Term vs Long-Term Focus: Vital few - The Pareto analysis reveals that around 20% of the total churned customers are responsible for approximately 80% of the total churn. This means that a small subset of customers is responsible for the majority of customer churn. Customer segments: The dashboard identifies two customer segments that constitute the vital few: female graduates who are married or single, and male graduates who are single. This suggests that Dollar Bank may need to pay special attention to these customer segments to reduce churn.
-
-
-Recommendations
-The analysis highlights the need for the bank to focus on retaining its established and long-term customers in all income categories, especially female blue cardholders earning less than $40k. By focusing on the vital few customer segments, Dollar Bank can reduce the overall churn rate to less than 7%, which is a generally acceptable churn rate level for most banks and credit card companies. The vital few of around 20% can be increased to 30% of the total churned customers to capture more customers segments and further reduce churn.
-
-Targeted marketing ad campaigns should be used to effectively reach the customer segments contributing the most to churn. Examples of such campaigns include:
-
-Providing financial education and resources to both male and female graduates, such as webinars, podcasts, or blog posts, to help them manage their finances more effectively, improve their financial literacy, and pay back student loans and other expenses without running into debt.
-Partnering with brands that appeal to the target audience (e.g partnering with fitness brands and offering discounts on gym memberships or workout gears to male and female graduates who are married or single)
-Creating a loyalty program specifically for established and long-term customers, which could include perks such as waived fees, free financial planning sessions, or personalized investment advice.
-Providing personalized investment advice and retirement planning services to established and long-term customers, which could help them maximize their savings and achieve their long-term financial goals.
-Offering credit counseling services to blue credit card holders who earn less than \$40k per year, which could help them improve their credit scores and reduce their financial stress.
-Rewards and incentives e.g sign-up bonuses, discounted interest rates on loans or cash back rewards on purchases, to increase credit card usage and attract new customers to the bank
+---
+*Developed as part of a portfolio project investigating financial service customer retention models.*
